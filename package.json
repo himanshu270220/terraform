@@ -4,17 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "index.js",
     "test": "jest"
   },
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
     "dotenv": "^16.4.7",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "jest": "^28.1.0",
+    "supertest": "^6.3.1"
   },
   "devDependencies": {
-    "jest": "^29.0.0",
-    "supertest": "^6.3.3"
+    "@babel/core": "^7.26.7",
+    "@babel/preset-env": "^7.26.7",
+    "babel-jest": "^29.7.0"
   }
 }

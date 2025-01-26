@@ -1,19 +1,17 @@
-const express = require('express');
+import express from 'express';
 const app = express();
-
-const PORT = 9000; // Define port explicitly
+const PORT = 9000;
 
 app.get('/api/get/', (req, res) => {
   res.send({ message: 'Welcome to MyApp API' });
 });
 
-// Start the server and bind it to PORT
-app.listen(9000, '0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-// Export the app for testing
-module.exports = app;
+export default app; // Use export if using ES6 imports/exports
+
 
 
 
