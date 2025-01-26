@@ -12,5 +12,8 @@ app.listen(9000, '0.0.0.0', () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
+// Export the app for testing
+module.exports = app;
+
 
 
