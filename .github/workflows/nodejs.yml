@@ -27,7 +27,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Run tests
+      # Step 4: Log the contents of package.json to verify it
+      - name: Log package.json
+        run: cat package.json
+
+      # Step 5: Run tests
       - name: Run tests
         run: npm test
 
