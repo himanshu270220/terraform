@@ -1,11 +1,12 @@
 import request from 'supertest';
 import app from '../index';
+import { WELCOME_MESSAGE } from '../config/constants.js'; // Import the constant
 
 describe('API Tests', () => {
   it('should return a welcome message on GET /api/get/', async () => {
     const response = await request(app).get('/api/get/');
     expect(response.status).toBe(200);
-    expect(response.body.message).toBe('Welcome to MyApp API');
+    expect(response.body.message).toBe(WELCOME_MESSAGE); // Use the constant
   });
 
   it('should echo a message on POST /api/echo', async () => {

@@ -1,4 +1,6 @@
 import express from 'express';
+import { WELCOME_MESSAGE } from './config/constants.js'; // Import the constant
+
 const app = express();
 const PORT = 9000;
 
@@ -7,7 +9,7 @@ app.use(express.json());
 
 // GET Route: Welcome Message
 app.get('/api/get/', (req, res) => {
-  res.send({ message: 'Welcome to MyApp Nodejs' });
+  res.send({ message: WELCOME_MESSAGE }); // Use the constant
 });
 
 // POST Route: Echo API
@@ -38,6 +40,4 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 export default app; // Export the app for testing
-
-
 
