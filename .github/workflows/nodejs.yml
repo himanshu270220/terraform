@@ -16,7 +16,7 @@ jobs:
 
     # Set up SSH for deployment
     - name: Set up SSH
-      uses: webfactory/ssh-agent@v0.8.1
+      uses: webfactory/ssh-agent@v0.5.3  # Updated to a stable version
       with:
         ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
 
@@ -29,4 +29,3 @@ jobs:
         npm install
         pm2 restart all
         EOF
-
