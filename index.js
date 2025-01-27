@@ -7,7 +7,7 @@ app.use(express.json());
 
 // GET Route: Welcome Message
 app.get('/api/get/', (req, res) => {
-  res.send({ message: 'Welcome to MyApp API' });
+  res.send({ message: 'Welcome to MyApp Nodejs' });
 });
 
 // POST Route: Echo API
