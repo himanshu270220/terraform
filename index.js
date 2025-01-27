@@ -10,8 +10,6 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-export default app; // Use export if using ES6 imports/exports
-
 
 
 
