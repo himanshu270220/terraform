@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "index.js",
+    "start": "node index.js",
     "test": "jest"
   },
   "author": "",
@@ -19,6 +19,7 @@
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "babel-jest": "^28.1.0"
-  }
+  },
+  "type": "module"
 }
 
