@@ -24,20 +24,27 @@ jobs:
       - name: Deploy to EC2
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@15.207.111.238 << 'EOF'
-            # Ensure the directory exists
-            if [ -d "/home/ubuntu/terraform" ]; then
-              cd /home/ubuntu/terraform
-            else
-              echo "Directory /home/ubuntu/terraform not found!"
-              exit 1
-            fi
+  # Ensure the directory exists
+  if [ -d "/home/ubuntu/terraform" ]; then
+    cd /home/ubuntu/terraform
+  else
+    echo "Directory /home/ubuntu/terraform not found!"
+    exit 1
+  fi
 
-            # Perform git pull
-            git pull origin main
+  # Perform git pull
+  git pull origin main
 
-            # Install dependencies
-            npm install
+  # Install dependencies
+  npm install
 
-            # Restart the app using pm2
-            pm2 restart all
-          EOF
+  # Check if any PM2 processes are running
+  if pm2 list | grep -q "No processes"; then
+    # If no processes are found, start the app
+    pm2 start index.js --name "my-app"  # Replace 'index.js' with your app's entry file
+  else
+    # Restart the app using pm2
+    pm2 restart all
+  fi
+EOF
+
