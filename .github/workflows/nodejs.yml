@@ -25,10 +25,10 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@15.207.111.238 << 'EOF'
             # Ensure the directory exists
-            if [ -d "/var/www/project" ]; then
-              cd /var/www/project
+            if [ -d "/home/ubuntu/terraform" ]; then
+              cd /home/ubuntu/terraform
             else
-              echo "Directory /var/www/project not found!"
+              echo "Directory /home/ubuntu/terraform not found!"
               exit 1
             fi
 
