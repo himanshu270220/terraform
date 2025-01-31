@@ -1,1 +1,1 @@
-export const WELCOME_MESSAGE = 'Welcome to NODEJs Code'; // Define the message here
+export const WELCOME_MESSAGE = 'Welcome to NODEJs Codes'; // Define the message here
